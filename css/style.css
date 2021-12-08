@@ -1,0 +1,283 @@
+.scoreboard {
+  position: relative;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  z-index: 3;
+  background: #fff;
+  border-radius: 4px;
+  padding: 16px;
+  overflow: hidden;
+}
+
+.scoreboard .right, .scoreboard .left {
+  position: absolute;
+  height: 32px;
+  width: 32px;
+  border: 1px solid #d1d1d1;
+  background-color: #fff;
+  color: #000;
+  font-size: 16px;
+  line-height: 32px;
+  cursor: pointer;
+  z-index: 5;
+}
+
+.scoreboard .right {
+  top: 50%;
+  right: 0;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.scoreboard .left {
+  top: 50%;
+  left: 0;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.wrap {
+  position: relative;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-transform: translateX(0px);
+          transform: translateX(0px);
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+
+.eventBox {
+  min-width: 30%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  border-right: 1px solid #ebe9e7;
+  -webkit-box-shadow: 0 0 10px rgba(209, 209, 209, 0.5);
+          box-shadow: 0 0 10px rgba(209, 209, 209, 0.5);
+  padding: 8px 8px 8px 16px;
+  margin: 0 8px;
+}
+
+.eventBox:first-child {
+  display: none;
+}
+
+.arena {
+  margin-top: 8px;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.homeTeam, .awayTeam {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 8px;
+}
+
+.result {
+  -ms-flex-preferred-size: 15%;
+      flex-basis: 15%;
+  font-weight: bold;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #f6f6f6;
+  min-height: 100vh;
+  color: #000;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+.shadow {
+  height: 300px;
+  width: 100%;
+  z-index: 2;
+}
+
+.hero {
+  background-color: rgba(0, 0, 0, 0.8);
+  width: 100%;
+  height: 300px;
+  position: relative;
+  overflow: hidden;
+  z-index: -1;
+  -webkit-box-shadow: 0px 24px 48px 8px rgba(0, 0, 0, 0.6);
+          box-shadow: 0px 24px 48px 8px rgba(0, 0, 0, 0.6);
+}
+
+.hero h1 {
+  color: #fff;
+  font-size: 64px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -140%);
+          transform: translate(-50%, -140%);
+}
+
+video {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100vw;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  opacity: .4;
+}
+
+.wrapper {
+  margin: -145px auto 48px;
+  width: 100%;
+  max-width: 1280px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  border-radius: 4px;
+  background: #fff;
+  -webkit-box-shadow: 0 0 10px rgba(209, 209, 209, 0.5);
+          box-shadow: 0 0 10px rgba(209, 209, 209, 0.5);
+  padding: 16px;
+}
+
+.standings {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1280px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  z-index: 2;
+  background: #fff;
+  padding: 16px;
+  overflow: hidden;
+}
+
+.standings h1 {
+  margin: 5% 0;
+}
+
+.table {
+  position: relative;
+  margin-top: 8px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 8px;
+  min-width: 50%;
+}
+
+.table p {
+  position: absolute;
+  font-size: 140px;
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.05);
+  top: -35px;
+  left: 0%;
+  z-index: 1;
+}
+
+.table .tableHeader {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 8px 12px;
+  font-size: 12px;
+  color: #000;
+  border-radius: 4px;
+  background-color: #f2f2f2;
+  font-family: 'Roboto Condensed', sans-serif;
+  z-index: 2;
+}
+
+.table .record {
+  font-family: 'Roboto', sans-serif;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 12px 12px;
+  margin: 1px 0;
+  border-radius: 4px;
+  -webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.06);
+          box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.06);
+}
+
+.table .record:nth-child(even) {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.table .record:nth-child(odd) {
+  background-color: rgba(255, 255, 255, 0.02);
+}
+
+.table .rank {
+  -ms-flex-preferred-size: 10%;
+      flex-basis: 10%;
+}
+
+.table .teamName {
+  -ms-flex-preferred-size: 60%;
+      flex-basis: 60%;
+}
+
+.table .played {
+  -ms-flex-preferred-size: 10%;
+      flex-basis: 10%;
+  text-align: center;
+}
+
+.table .won {
+  -ms-flex-preferred-size: 10%;
+      flex-basis: 10%;
+  text-align: center;
+}
+
+.table .lost {
+  -ms-flex-preferred-size: 10%;
+      flex-basis: 10%;
+  text-align: center;
+}
+
+.table .streak {
+  -ms-flex-preferred-size: 10%;
+      flex-basis: 10%;
+  text-align: center;
+}
+/*# sourceMappingURL=style.css.map */

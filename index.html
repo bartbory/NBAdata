@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NBA Today's data</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&family=Roboto:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+    <div class="hero shadow">
+        <video playsinline autoplay muted loop poster="assets/picture.jpg" id="bgvid">
+            <source src="assets/video.mp4" type="video/mp4">
+        </video>
+        <h1>NBA INFO BOX</h1>
+    </div>
+    <div class="wrapper">
+        <div class="scoreboard">
+            <button class="right active">&rightarrow;</button>
+            <button class="left">&leftarrow;</button>
+            <div class="wrap">
+                <div class="eventBox"></div>
+
+            </div>
+        </div>
+        <div class="standings">
+            <div class="table east">
+                <h1>East Conference</h1>
+                <p>EAST</p>
+                <div class="tableHeader">
+                    <div class="detail rank">Rank</div>
+                    <div class="detail teamName">Team name</div>
+                    <div class="detail played">MP</div>
+                    <div class="detail won">Won</div>
+                    <div class="detail lost">Lost</div>
+                    <div class="detail streak">Streak</div>
+                </div>
+            </div>
+            <div class="table west">
+                <h1>West Conference</h1>
+                <p>WEST</p>
+                <div class="tableHeader">
+                    <div class="detail rank">Rank</div>
+                    <div class="detail teamName">Team name</div>
+                    <div class="detail played">MP</div>
+                    <div class="detail won">Won</div>
+                    <div class="detail lost">Lost</div>
+                    <div class="detail streak">Streak</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/standings.js"></script>
+    <script src="js/scoreboard.js"></script>
+    <script src="js/slide.js"></script>
+
+</body>
+
+</html>
