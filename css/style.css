@@ -15,17 +15,28 @@
   overflow: hidden;
 }
 
+.scoreboard p {
+  text-align: center;
+}
+
+.scoreboard i {
+  height: 48px;
+  width: 48px;
+  border: 1px solid #d1d1d1;
+  background-color: #1d428a;
+  color: #fff;
+  font-size: 16px;
+  line-height: 48px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
 .scoreboard .right, .scoreboard .left {
   position: absolute;
-  height: 32px;
-  width: 32px;
-  border: 1px solid #d1d1d1;
-  background-color: #fff;
-  color: #000;
-  font-size: 16px;
-  line-height: 32px;
-  cursor: pointer;
   z-index: 5;
+  border: none;
+  width: 10%;
+  height: 100%;
 }
 
 .scoreboard .right {
@@ -33,6 +44,8 @@
   right: 0;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
+  background: -webkit-gradient(linear, right top, left top, color-stop(50%, white), to(transparent));
+  background: linear-gradient(to left, white 50%, transparent);
 }
 
 .scoreboard .left {
@@ -40,6 +53,8 @@
   left: 0;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
+  background: -webkit-gradient(linear, left top, right top, color-stop(50%, white), to(transparent));
+  background: linear-gradient(to right, white 50%, transparent);
 }
 
 .scoreboard .disable {
@@ -48,7 +63,7 @@
 
 .wrap {
   position: relative;
-  width: 100%;
+  width: calc(100% - 96px);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -60,6 +75,7 @@
           transform: translateX(0px);
   -webkit-transition: .5s;
   transition: .5s;
+  margin: 0 auto;
 }
 
 .eventBox {

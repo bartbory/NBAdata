@@ -40,6 +40,7 @@ const createDivs = () => {
     awayT.append(scoreV, teamV)
 }
 var eventsNo
+var boxSize
 const API_URL = `https://data.nba.net/data/10s/prod/v1/${today}/scoreboard.json`
 const generatescoreboard = () => {
     fetch(API_URL)
@@ -59,6 +60,9 @@ const generatescoreboard = () => {
                 teamH.textContent = eventsNo[a].hTeam.triCode
                 scoreV.textContent = eventsNo[a].vTeam.score
                 teamV.textContent = eventsNo[a].vTeam.triCode
+            }
+            if (eventsNo.length === 0) {
+                document.querySelector('.scoreboard').innerHTML = "<p>There is no events for today</p>"
             }
         })
         .catch(err => console.error(err))
