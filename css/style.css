@@ -42,6 +42,10 @@
           transform: translateY(-50%);
 }
 
+.scoreboard .disable {
+  display: none;
+}
+
 .wrap {
   position: relative;
   width: 100%;

@@ -9,7 +9,7 @@ const btnRight = document.querySelector('.right')
 const btnLeft = document.querySelector('.left')
 const eventslist = document.querySelector('.wrap')
 
-today = yyyy + dd + mm
+today = yyyy + dd - 5 + mm
 
 //tworzenie struktury
 const createEventBox = () => {
@@ -39,13 +39,13 @@ const createDivs = () => {
     const awayT = document.querySelector('.eventBox:last-child>.awayTeam')
     awayT.append(scoreV, teamV)
 }
-
+var eventsNo
 const API_URL = `https://data.nba.net/data/10s/prod/v1/${today}/scoreboard.json`
 const generatescoreboard = () => {
     fetch(API_URL)
         .then(res => res.json())
         .then(data => {
-            const eventsNo = data.games
+            eventsNo = data.games
             for (let a = 0; a < eventsNo.length; a++) {
                 createEventBox()
                 createDivs()
