@@ -9,7 +9,7 @@ const btnRight = document.querySelector('.right')
 const btnLeft = document.querySelector('.left')
 const eventslist = document.querySelector('.wrap')
 
-today = yyyy + dd - 5 + mm
+today = yyyy + dd + mm
 
 //tworzenie struktury
 const createEventBox = () => {
