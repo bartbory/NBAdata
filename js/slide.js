@@ -6,7 +6,7 @@ const boxSize = document.querySelector('.wrap').offsetWidth * .3 + 16
 
 
 function checkButtons() {
-    if (games > 0 && games < (eventsNo.length - 4)) {
+    if (games > 3 && games < (eventsNo.length - 4)) {
         btnRight.classList.remove('disable')
         btnLeft.classList.remove('disable')
     } else if (games === 0) {

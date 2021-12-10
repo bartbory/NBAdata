@@ -9,7 +9,7 @@ const btnRight = document.querySelector('.right')
 const btnLeft = document.querySelector('.left')
 const eventslist = document.querySelector('.wrap')
 
-today = yyyy + dd + mm
+today = yyyy + dd - 5 + mm
 
 //tworzenie struktury
 const createEventBox = () => {
@@ -39,8 +39,23 @@ const createDivs = () => {
     const awayT = document.querySelector('.eventBox:last-child>.awayTeam')
     awayT.append(scoreV, teamV)
 }
-var eventsNo
 
+function checkButtons() {
+    if (games > 0 && games < (eventsNo.length - 4)) {
+        btnRight.classList.remove('disable')
+        btnLeft.classList.remove('disable')
+    } else if (games === 0) {
+        btnLeft.classList.add('disable')
+    } else {
+        btnRight.classList.add('disable')
+    }
+}
+
+let eventsNo
+let actual = 0
+let games = 0
+
+const boxSize = document.querySelector('.wrap').offsetWidth * .3 + 16
 const API_URL = `https://data.nba.net/data/10s/prod/v1/${today}/scoreboard.json`
 const generatescoreboard = () => {
     fetch(API_URL)
@@ -63,9 +78,27 @@ const generatescoreboard = () => {
             }
             if (eventsNo.length === 0) {
                 document.querySelector('.scoreboard').innerHTML = "<p>There is no events for today</p>"
+            } else if (eventsNo.length <= 3) {
+                btnRight.classList.add('disable')
             }
+
         })
         .catch(err => console.error(err))
 }
 
 generatescoreboard()
+
+
+
+btnRight.addEventListener('click', () => {
+    games++
+    actual -= boxSize
+    document.querySelector('.wrap').setAttribute('style', `transform: translateX(${actual}px)`)
+    checkButtons()
+})
+btnLeft.addEventListener('click', () => {
+    games--
+    actual += boxSize
+    document.querySelector('.wrap').setAttribute('style', `transform: translateX(${actual}px)`)
+    checkButtons()
+})
