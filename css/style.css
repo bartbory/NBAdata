@@ -79,7 +79,7 @@
 }
 
 .eventBox {
-  min-width: 30%;
+  width: 30%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -155,6 +155,8 @@ body {
   top: 50%;
   -webkit-transform: translate(-50%, -140%);
           transform: translate(-50%, -140%);
+  border-left: 2px solid white;
+  border-top: 2px solid white;
 }
 
 video {

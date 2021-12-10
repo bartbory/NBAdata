@@ -1,0 +1,74 @@
+.scoreboard
+    position: relative
+    width: 100%
+    display: flex
+    flex-wrap: nowrap
+    align-content: center
+    z-index: 3
+    background: #fff
+    border-radius: 4px
+    padding: 16px
+    overflow: hidden
+    p
+        text-align: center
+    i   
+        
+        height: 48px
+        width: 48px
+        border: 1px solid rgb(209,209,209)
+        background-color: #1d428a
+        color: #fff
+        font-size: 16px
+        line-height: 48px
+        cursor: pointer
+        border-radius: 4px
+    .right, .left
+        position: absolute
+        z-index: 5
+        border: none
+        width: 10%
+        height: 100%
+    .right
+        top: 50%
+        right: 0
+        transform: translateY(-50%)
+        background: linear-gradient(to left, white 50%, transparent)
+    .left
+        top: 50%
+        left: 0
+        transform: translateY(-50%)
+        background: linear-gradient(to right, white 50%, transparent)
+    .disable
+        display: none
+
+.wrap
+    position: relative
+    width: calc(100% - 96px)
+    display: flex
+    flex-wrap: nowrap
+    align-content: center    
+    transform: translateX(0px)
+    transition: .5s
+    margin: 0 auto
+.eventBox
+    width: 30%
+    display: flex
+    flex-direction: column
+    border-right: 1px solid #ebe9e7
+    box-shadow: 0 0 10px rgba(209,209,209,.5)
+    padding: 8px 8px 8px 16px
+    margin: 0 8px
+    &:first-child
+        display: none
+
+.arena
+    margin-top: 8px
+    color: rgba(0,0,0,.6)
+
+.homeTeam, .awayTeam
+  display: flex
+  margin-top: 8px
+
+.result
+    flex-basis: 15%
+    font-weight: bold

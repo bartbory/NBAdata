@@ -1,9 +1,9 @@
 var actual = 0
 var games = 0
 
-document.querySelector('.wrap').addEventListener('click', (e) => {
-    boxSize = e.target.closest('.wrap>.eventBox').offsetWidth + 16
-})
+
+const boxSize = document.querySelector('.wrap').offsetWidth * .3 + 16
+
 
 function checkButtons() {
     if (games > 0 && games < (eventsNo.length - 4)) {

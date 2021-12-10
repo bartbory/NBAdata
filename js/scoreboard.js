@@ -9,7 +9,7 @@ const btnRight = document.querySelector('.right')
 const btnLeft = document.querySelector('.left')
 const eventslist = document.querySelector('.wrap')
 
-today = yyyy + dd - 5 + mm
+today = yyyy + dd + mm
 
 //tworzenie struktury
 const createEventBox = () => {
@@ -40,7 +40,7 @@ const createDivs = () => {
     awayT.append(scoreV, teamV)
 }
 var eventsNo
-var boxSize
+
 const API_URL = `https://data.nba.net/data/10s/prod/v1/${today}/scoreboard.json`
 const generatescoreboard = () => {
     fetch(API_URL)
