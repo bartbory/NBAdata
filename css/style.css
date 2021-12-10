@@ -94,10 +94,6 @@
   margin: 0 8px;
 }
 
-.eventBox:first-child {
-  display: none;
-}
-
 .arena {
   margin-top: 8px;
   color: rgba(0, 0, 0, 0.6);
