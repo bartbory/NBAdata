@@ -41,7 +41,7 @@ const createDivs = () => {
 }
 
 function checkButtons() {
-    if (games > 0 && games < (eventsNo.length - 4)) {
+    if (games > 0 && games < (eventsNo.length - 3)) {
         btnRight.classList.remove('disable')
         btnLeft.classList.remove('disable')
     } else if (games === 0) {
