@@ -44,8 +44,8 @@
   right: 0;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
-  background: -webkit-gradient(linear, right top, left top, color-stop(50%, white), to(transparent));
-  background: linear-gradient(to left, white 50%, transparent);
+  background: -webkit-gradient(linear, right top, left top, color-stop(80%, white), to(transparent));
+  background: linear-gradient(to left, white 80%, transparent);
 }
 
 .scoreboard .left {
@@ -53,8 +53,8 @@
   left: 0;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
-  background: -webkit-gradient(linear, left top, right top, color-stop(50%, white), to(transparent));
-  background: linear-gradient(to right, white 50%, transparent);
+  background: -webkit-gradient(linear, left top, right top, color-stop(80%, white), to(transparent));
+  background: linear-gradient(to right, white 80%, transparent);
 }
 
 .scoreboard .disable {
@@ -87,16 +87,17 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  border-right: 1px solid #ebe9e7;
   -webkit-box-shadow: 0 0 10px rgba(209, 209, 209, 0.5);
           box-shadow: 0 0 10px rgba(209, 209, 209, 0.5);
   padding: 8px 8px 8px 16px;
   margin: 0 8px;
+  overflow: hidden;
 }
 
 .arena {
   margin-top: 8px;
   color: rgba(0, 0, 0, 0.6);
+  white-space: nowrap;
 }
 
 .homeTeam, .awayTeam {
@@ -110,6 +111,19 @@
   -ms-flex-preferred-size: 15%;
       flex-basis: 15%;
   font-weight: bold;
+  margin-right: 8px;
+}
+
+@media (max-width: 1024px) {
+  .eventBox {
+    min-width: 50%;
+  }
+}
+
+@media (max-width: 480px) {
+  .eventBox {
+    min-width: 100%;
+  }
 }
 
 * {

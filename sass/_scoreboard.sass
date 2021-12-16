@@ -32,12 +32,12 @@
         top: 50%
         right: 0
         transform: translateY(-50%)
-        background: linear-gradient(to left, white 50%, transparent)
+        background: linear-gradient(to left, white 80%, transparent)
     .left
         top: 50%
         left: 0
         transform: translateY(-50%)
-        background: linear-gradient(to right, white 50%, transparent)
+        background: linear-gradient(to right, white 80%, transparent)
     .disable
         display: none
 
@@ -50,18 +50,20 @@
     transform: translateX(0px)
     transition: .5s
     margin: 0 auto
+
 .eventBox
     min-width: 30%
     display: flex
     flex-direction: column
-    border-right: 1px solid #ebe9e7
     box-shadow: 0 0 10px rgba(209,209,209,.5)
     padding: 8px 8px 8px 16px
     margin: 0 8px
+    overflow: hidden
 
 .arena
     margin-top: 8px
     color: rgba(0,0,0,.6)
+    white-space: nowrap
 
 .homeTeam, .awayTeam
   display: flex
@@ -70,3 +72,12 @@
 .result
     flex-basis: 15%
     font-weight: bold
+    margin-right: 8px
+
+@media (max-width: 1024px)
+    .eventBox
+        min-width: 50%
+
+@media (max-width: 480px)
+    .eventBox
+        min-width: 100%

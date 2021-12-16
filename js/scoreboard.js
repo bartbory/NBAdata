@@ -40,8 +40,25 @@ const createDivs = () => {
     awayT.append(scoreV, teamV)
 }
 
+const displayWidth = window.innerWidth
+//sprawdzenie ile eventów można wyświetlić na jednym widoku
+const displayQ = () => {
+    if (displayWidth < 480) {
+        return 1
+    } else if (displayWidth >= 480 && displayWidth < 1024) {
+        return 2
+    } else {
+        return 3
+    }
+}
+
+
+// sprawdzenie czy wyświetlać strzałki
 function checkButtons() {
-    if (games > 0 && games < (eventsNo.length - 3)) {
+    if (eventsNo.length > displayQ()) {
+        btnRight.classList.remove('disable')
+    }
+    if (games > 0 && games < (eventsNo.length - displayQ())) {
         btnRight.classList.remove('disable')
         btnLeft.classList.remove('disable')
     } else if (games === 0) {
@@ -55,13 +72,14 @@ let eventsNo
 let actual = 0
 let games = 0
 
-const boxSize = document.querySelector('.wrap').offsetWidth * .3 + 16
+// const boxSize = document.querySelector('.wrap').offsetWidth *.3 + 16
 const API_URL = `https://data.nba.net/data/10s/prod/v1/${today}/scoreboard.json`
 const generatescoreboard = () => {
     fetch(API_URL)
         .then(res => res.json())
         .then(data => {
             eventsNo = data.games
+            console.log(eventsNo.length);
             for (let a = 0; a < eventsNo.length; a++) {
                 createEventBox()
                 createDivs()
@@ -76,28 +94,27 @@ const generatescoreboard = () => {
                 scoreV.textContent = eventsNo[a].vTeam.score
                 teamV.textContent = eventsNo[a].vTeam.triCode
             }
-            if (eventsNo.length === 0) {
-                document.querySelector('.scoreboard').innerHTML = "<p>There is no events for today</p>"
-            } else if (eventsNo.length <= 3) {
-                btnRight.classList.add('disable')
+            if (eventsNo.length === 0 || eventsNo == undefined) {
+                scoreboard.parentElement.innerHTML = "<p>There is no events for today</p>"
             }
-
+            checkButtons()
+            console.log(eventsNo.length - displayQ());
         })
-        .catch(err => console.error(err))
+        .catch(() => scoreboard.parentElement.innerHTML = "<p>There is an API error. Please try again later. Sorry :(</p>")
 }
 
 generatescoreboard()
 
-
-
 btnRight.addEventListener('click', () => {
     games++
+    const boxSize = document.querySelector('.wrap>.eventBox').offsetWidth + 16
     actual -= boxSize
     document.querySelector('.wrap').setAttribute('style', `transform: translateX(${actual}px)`)
     checkButtons()
 })
 btnLeft.addEventListener('click', () => {
     games--
+    const boxSize = document.querySelector('.wrap>.eventBox').offsetWidth + 16
     actual += boxSize
     document.querySelector('.wrap').setAttribute('style', `transform: translateX(${actual}px)`)
     checkButtons()
